@@ -1,0 +1,12 @@
+{
+  "name": "coverwall",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.0.3",
+    "jquery": "~1.11.0",
+    "react": "~0.9.0",
+    "backbone": "~1.1.2",
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {}
+}
