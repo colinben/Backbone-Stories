@@ -1,7 +1,9 @@
-coverwall
-=========
+Backbone-Stories
+================
 
-coverwall project
+Backbone Stories App - Backend python bottle
+
+
 
 Getting Started
 ---------------
