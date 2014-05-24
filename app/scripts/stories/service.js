@@ -20,125 +20,6 @@
       frequencyUpdateIndex = 0;
   var service = _.extend({
     /**
-     * Gets prices
-     *
-     * @param params
-     * @returns {RSVP.Promise}
-     */
-    getPrices: function(params) {
-      params = params || {};
-      return new RSVP.Promise(function(resolve, reject) {
-        var pricesUrl = settings.get('service.prices')(params);
-        $.ajax({
-          url: pricesUrl,
-          dataType: 'json'
-        }).
-            done(function(data) {
-              resolve(data);
-            }).
-            fail(function(jqXHR, textStatus) {
-              reject(new Error(textStatus));
-            });
-      });
-    },
-    /**
-     * Gets candles
-     *
-     * @param params
-     * @returns {RSVP.Promise}
-     */
-    getCandles: function(params) {
-      params = params || {};
-      return new RSVP.Promise(function(resolve, reject) {
-        var candlesUrl = settings.get('service.candles')(params);
-        $.ajax({
-          url: candlesUrl,
-          dataType: 'json'
-        }).
-            done(function(data) {
-              resolve(data);
-            }).
-            fail(function(jqXHR, textStatus) {
-              reject(new Error(textStatus));
-            })
-      });
-    },
-    /**
-     * Gets backtesting
-     *
-     * @param params
-     * @returns {RSVP.Promise}
-     */
-    getBacktesting: function(params) {
-      params = params || {};
-      return new RSVP.Promise(function(resolve, reject) {
-        var backtesting = new Services(params, {parse: true});
-        if (!backtesting.isValid()) {
-          reject(backtesting.validationError);
-          return;
-        }
-        _.each(backtesting.defaults, function(item, index) {
-          if (!params[index]) params[index] = item;
-        });
-        var url = settings.get('service.backtesting')(params);
-         $.ajax({
-          url: url,
-          dataType: 'json'
-        }).
-            done(function(data) {
-              resolve(data);
-            }).
-            fail(function(jqXHR, textStatus) {
-              reject(new Error(textStatus));
-            })
-      });
-    },
-    /**
-     * Gets available markets
-     *
-     * @param params
-     * @returns {RSVP.Promise}
-     */
-    getAvailableMarkets: function(params) {
-      params = params || {};
-      return new RSVP.Promise(function(resolve, reject) {
-        var url = settings.get('service.markets')(params);
-        $.ajax({
-          url: url,
-          dataType: 'json'
-        }).
-            done(function(data) {
-              resolve(data);
-            }).
-            fail(function(jqXHR, textStatus) {
-              reject(new Error(textStatus));
-            })
-      });
-    },
-      /**
-       * notify by sms and email
-       *
-       * @param params
-       * @returns {RSVP.Promise}
-       */
-      notify: function(params) {
-          params = params || {};
-          return new RSVP.Promise(function(resolve, reject) {
-             // var url = settings.get('service.markets')(params);
-              $.ajax({
-                  url:  settings.get('service.notify')(params),
-                  dataType: 'json'
-              }).
-                  done(function(data) {
-                      console.log(data.email) ;
-                      resolve(data);
-                  }).
-                  fail(function(jqXHR, textStatus) {
-                      reject(new Error(textStatus));
-                  })
-          });
-      },
-    /**
      * Gets saved models
      *
      * @param
@@ -149,40 +30,6 @@
           reFetch = reFetch ? reFetch : false;
       // init models from localStorage or from data
       function initData() {
-        //botOptionModel
-        modelData.optionsData = ls.get('options_bot');
-        modelData.optionsModel = new OptionsModel(modelData.optionsData, {parse: true});
-
-        console.log('optionsModel', modelData.optionsModel);
-
-        //botOptionModel
-        modelData.botOptionData = ls.get('options_bot');
-        modelData.botOptionModel = new BotOptionModel(modelData.botOptionData, {parse: true});
-
-        console.log('botOptionModel', modelData.botOptionModel);
-
-        //globalOptionModel
-        modelData.globalOptionData = ls.get('options_global');
-        modelData.globalOptionModel = new MarketOptionModel(modelData.globalOptionData, {parse: true});
-
-        console.log('globalOptionModel', modelData.globalOptionModel);
-
-        //notificationOptionModel
-        modelData.notificationOptionData = ls.get('options_notification');
-        modelData.notificationOptionModel = new NotificationOptionModel(modelData.notificationOptionData, {parse: true});
-
-        console.log('notificationOptionModel', modelData.notificationOptionModel);
-
-        //stepsModel
-        modelData.stepsData = ls.get('signup_steps');
-        modelData.stepsModel = new SignupStep(modelData.stepsData, {parse: true});
-        console.log('stepsModel', modelData.stepsModel);
-
-        //marketsOptionModel
-        modelData.marketsOptionData = ls.get('options_markets');
-        modelData.marketsOptionModel = new Markets(modelData.marketsOptionData, {parse: true});
-
-        console.log('marketsOptionModel', modelData.marketsOptionModel);
       }
 
       if (!reFetch) {
@@ -200,7 +47,9 @@
       return this.promise;
     },
 
-    ifUserRegistered: function(pass, reject) {pass();return;
+    ifUserRegistered: function(pass, reject) {
+      pass();
+      return false;
       this.getSavedModels().then(function(models) {
         var model = models.stepsModel,
             queue = model.get('queue'),
@@ -240,7 +89,31 @@
         }
       }, options.timeout);
       frequencyUpdateIndex++;
-    }
+    },
+
+    /**
+     * Gets model
+     *
+     * @param params
+     * @returns {RSVP.Promise}
+     */
+    getModel: function(model, params) {
+      params = params || {};
+      model = model || 'stories';
+      return new RSVP.Promise(function(resolve, reject) {
+        var url = settings.get('service.' + model)(params);
+        $.ajax({
+          url: url,
+          dataType: 'json'
+        }).
+            done(function(data) {
+              resolve(data);
+            }).
+            fail(function(jqXHR, textStatus) {
+              reject(new Error(textStatus));
+            })
+      });
+    },
   });
 
   provide('stories.service', service);

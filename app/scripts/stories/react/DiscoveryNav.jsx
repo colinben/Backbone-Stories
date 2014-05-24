@@ -10,16 +10,16 @@
 				<div className="inside cf">
 				    <ul id="x-scopes" className="filter-nav">
 				      <li>
-				        <a id="x-scope-fresh" className="" href="/p/fresh">Fresh</a>
+				        <a id="x-scope-fresh" className={this.props.filter == 'fresh' ? 'selected' : ''} href="#discovery/fresh">Fresh</a>
 				      </li>
 				      <li>
-				        <a id="x-scope-trending" className="selected" href="/p/trending">Trending</a>
+				        <a id="x-scope-trending" className={this.props.filter == 'trending' ? 'selected' : ''} href="#discovery/trending">Trending</a>
 				      </li>
 				      <li>
-				        <a id="x-scope-popular" className="" href="/p/popular">Popular</a>
+				        <a id="x-scope-popular" className={this.props.filter == 'popular' ? 'selected' : ''} href="#discovery/popular">Popular</a>
 				      </li>
 				      <li>
-				        <a id="x-scope-liked" className="" href="/p/liked">Liked</a>
+				        <a id="x-scope-liked" className={this.props.filter == 'liked' ? 'selected' : ''} href="#discovery/liked">Liked</a>
 				      </li>
 				    </ul>
 				    <ul className="toggle-nav">

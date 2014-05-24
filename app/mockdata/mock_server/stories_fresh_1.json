@@ -1,0 +1,131 @@
+{
+    "status": "success",
+    "data": [
+        {
+            "_id": "537c8e0056c02c5482a0a3c2",
+            "audit": {
+                "likes": 0,
+                "views": 0,
+                "status": "published",
+                "date_created": "2014-05-17T13:00:00.00Z",
+                "author": {
+                    "name": "Tom",
+                    "thumbnail": "http://cnd_image.com"
+                }
+            },
+            "content": {
+                "type": "story",
+                "title": "Liverpool to buy Adam Lallana",
+                "subtitle": "Liverpool are in talks with Southampton over the purchase of Adam Lallana, but the two clubs are some way off coming to an agreement, according to reports.",
+                "body_text": "The Express claims the the Reds are prepared to spend £20million on the England international, but his club continue to hold firm on their objective of getting as much money as possible. The 26-year-old has many admirers for the summer, and Manchester United have also been linked heavily with a bid to capture his signature.",
+                "images": [
+                    "image.jpg",
+                    "image_2.jpg",
+                    "image_3.jpg"
+                ]
+            },
+            "tags": [
+                "sports",
+                "Liverpool",
+                "Southampton"
+            ],
+            "reference": {
+                "user_id": "537c8e4856c02c5482a0a3cc"
+            }
+        },
+        {
+            "_id": "537c8e0256c02c5482a0a3c3",
+            "audit": {
+                "likes": 4,
+                "views": 50,
+                "status": "published",
+                "date_created": "2014-05-20T14:00:00.00Z",
+                "author": {
+                    "name": "Tom",
+                    "thumbnail": "http://cnd_image.com"
+                }
+            },
+            "content": {
+                "type": "story",
+                "title": "Olsen fears for Agger future",
+                "subtitle": "",
+                "body_text": "Denmark coach Morten Olsen believes that Daniel Agger could become 'frustrated and irritated' if he remains on the periphery at Liverpool. The 29-year-old has only started 16 Premier League games this term with injuries playing a part, while Mamadou Sakho and Martin Skrtel have been the preferred pairing. He spoke of his frustration at how his personal campaign had gone in the Danish press recently and hinted at a potential exit.",
+                "images": [
+                    "image.jpg",
+                    "image_2.jpg"
+                ]
+            },
+            "tags": [
+                "sports",
+                "Liverpool",
+                "Denmark"
+            ],
+            "reference": {
+                "user_id": "537c8e4856c02c5482a0a3cc"
+            }
+        },
+        {
+            "_id": "537c8e0456c02c5482a0a3c4",
+            "audit": {
+                "likes": 20,
+                "views": 460,
+                "status": "published",
+                "date_created": "2014-05-19T12:00:00.00Z",
+                "author": {
+                    "name": "Tom",
+                    "thumbnail": "http://cnd_image.com"
+                }
+            },
+            "content": {
+                "type": "story",
+                "title": "Van Gaal trying to sign Konoplyanca?",
+                "subtitle": "",
+                "body_text": "The Ukrainian winger has been on the radar of the Reds for the majority of the season and manager Brendan Rodgers attempted to lure him to Anfield with an offer on the final day of the January transfer window. It is believed that Rodgers would once again move for his man this summer and remains confident that the Dnipro winger will be part of his squad next season. However, according to the Mirror, new United boss Van Gaal will do battle with their Premier League rivals to secure his signature. The Dutch manager is lining up a host of new transfers to transform the squad and has reportedly given Ed Woodward a shortlist of players to sign during the World Cup. Van Gaal is keen on strengthening the midfield, especially out wide and also across the back four.",
+                "images": [
+                    "image.jpg"
+                ]
+            },
+            "tags": [
+                "sports",
+                "Liverpool",
+                "Ukrainian"
+            ],
+            "reference": {
+                "user_id": "537c8e4856c02c5482a0a3cc"
+            }
+        },
+        {
+            "_id": "537c8e0656c02c5482a0a3c5",
+            "audit": {
+                "likes": 10,
+                "views": 789,
+                "status": "published",
+                "date_created": "2014-05-20T10:30:00.00Z",
+                "author": {
+                    "name": "Tom",
+                    "thumbnail": "http://cnd_image.com"
+                }
+            },
+            "content": {
+                "type": "story",
+                "title": "Liverpool boss Brendan Rodgers explains Steven Gerrard’s switch",
+                "subtitle": "Liverpool manager Brendan Rodgers says he always planned to shift Steven Gerrard to a deeper midfield role",
+                "body_text": "The 33-year-old Reds captain was praised for effortlessly adapting to his new deep-lying midfield role in the second half of the season as the Merseyside outfit mounted a title challenge. Gerrard finished with figures of 13 goals and 13 assists in 34 Premier League appearances – and Liverpool manager Rodgers heaped praise on the England midfielder’s versatility. “I sat with Steven when I first came in, two years ago,” Rodgers told Liverpool’s website. “And I said that this was my vision for him prolonging his career. I felt he had the real quality to play in that role. After that, it was only about timing really. “It was about when we put him in that position. And probably halfway through the season, once I had the players fit that could move and work around him, we changed him and from then he’s been outstanding. “Steven’s a really intelligent player. He’s played really as a more attacking player all his life, but he’s dropped back into that role. It’s still a playmaking position, and he’s started off a number of our attacks from there. “And for him to finish the season like he did was incredible. He goes into the World Cup in great form, and he will be strong next year as well I am sure.”",
+                "images": [
+                    "image.jpg",
+                    "image_2.jpg",
+                    "image_3.jpg"
+                ]
+            },
+            "tags": [
+                "sports",
+                "Liverpool",
+                "Gerrard",
+                "Rodgers"
+            ],
+            "reference": {
+                "user_id": "537c8e4856c02c5482a0a3cc"
+            }
+        }
+    ]
+}

@@ -25,51 +25,11 @@
     };
 
     //-------- RPC QUERY STRINGS PASSED TO THE REMOTE SERVICE------------
-    var basicQsFragment = 'marketplace={{marketplace}}&base={{base}}&currency={{currency}}&interval={{interval}}';
-    var botFragment = '&ema_short={{ema_short}}&ema_long={{ema_long}}&algo={{ma_algo}}';
-    var backtestingFragment = '&buy_1={{buy_1}}&sell_1={{sell_1}}&start_fund={{start_fund}}&base={{base}}&currency={{currency}}&stop_loss={{stop_loss}}&btc_fund={{btc_fund}}';
+    var storyFragment = '/stories&filter={filter}&page={page}';
 
+    var baseURL = 'https://yyzxw.net',
+        server = '';
 
-    var candlesQString = '/api/v1/candles?' + basicQsFragment + botFragment + '&num_results={{num_results}}';
-    var pricesQString = '/api/v1/prices?' + basicQsFragment + botFragment + '&since={{since}}&until={{until}}';
-    var backtestingQString = '/api/v1/backtest?' + basicQsFragment + botFragment + backtestingFragment + '&since={{since}}&until={{until}}';
-
-    var marketQString =   '/api/v1/availableMarkets';
-    var notifyQString =   '/api/v1/notify';
-    var localDev_baseURL = 'https://localdev.yyzxw.net:8000';
-    var prod_baseURL = 'https://yyzxw.net';
-
-    //--------RPC service defaults -------------
-    var backtestingDefaults = {
-        defaults: {
-            ma_algo: "simple",
-            stop_loss: .22
-        }
-    };
-    var candlesDefaults = {
-        defaults: {
-            num_results: 80,
-            ma_algo: "simple"
-        }
-    };
-    var pricesDefaults = {
-        defaults: {ma_algo: "simple"},
-        processors: {
-            //note that this is default fixed values, since and util could not specified by params
-            since: function (parsedString, paramValue, params) {
-                if (params['interval']) {
-                    var now = new Date().getTime(),
-                        since = now - (params['interval'] * 80); //formula provided by Troy
-                    parsedString = parsedString.replace('{{since}}', since);
-                }
-                return parsedString;
-            },
-            until: function (parsedString, paramValue, params) {
-                var now = new Date().getTime();
-                return parsedString.replace('{{until}}', now);
-            }
-        }
-    }
     //====== service templates ========================
 
 
@@ -82,19 +42,10 @@
             level: $.log.LEVEL.TRACE
         },
         socket: {
-            server: prod_baseURL
+            server: server
         },
         service: {
-            settings: utils.template('mockdata/mock_localstore/settings.json'),
-            candles: utils.template('mockdata/mock_server/candles/{{marketplace}}_{{currency}}_{{base}}.json'),
-            prices: utils.template('mockdata/mock_server/prices/{{marketplace}}_{{currency}}_{{base}}.json'),
-            //markets: utils.template(prod_baseURL + marketQString),
-            markets: utils.template('mockdata/mock_server/markets/available.json'),
-            notify:   utils.template(prod_baseURL + notifyQString),
-            backtesting: utils.template(prod_baseURL + backtestingQString, backtestingDefaults)
-             /*candles: candlesUrlTemplate,
-             prices: pricesUrlTemplate,
-             backtesting: backtestingUrlTemplate*/
+            stories: utils.template('mockdata/mock_server/stories_{{filter}}_{{page}}.json')
         }
     };
     //---------------------------------------------------
@@ -106,14 +57,10 @@
             level: $.log.LEVEL.TRACE
         },
         socket: {
-            server: localDev_baseURL
+            server: server
         },
         service: {
-            candles: utils.template(localDev_baseURL + candlesQString, candlesDefaults),
-            prices: utils.template(localDev_baseURL + pricesQString, pricesDefaults),
-            backtesting: utils.template(localDev_baseURL + backtestingQString, backtestingDefaults),
-            notify:   utils.template(localDev_baseURL + notifyQString),
-            markets: utils.template(localDev_baseURL + marketQString)
+            stories: utils.template(baseURL + storyFragment)
         }
     };
     //---------------------------------------------------
@@ -123,14 +70,10 @@
             level: $.log.LEVEL.INFO
         },
         socket: {
-            server: prod_baseURL
+            server: server
         },
         service: {
-            candles: utils.template(prod_baseURL + candlesQString, candlesDefaults),
-            prices: utils.template(prod_baseURL + pricesQString, pricesDefaults),
-            backtesting: utils.template(prod_baseURL + backtestingQString, backtestingDefaults),
-            notify:   utils.template(prod_baseURL + notifyQString),
-            markets: utils.template('mockdata/mock_server/markets/available.json')
+            stories: utils.template(baseURL + storyFragment)
         }
     });
 

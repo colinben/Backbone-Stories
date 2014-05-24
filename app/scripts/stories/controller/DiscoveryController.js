@@ -16,7 +16,7 @@
   var DiscoveryController = BaseController.extend({
 
     actions: {
-      ':tab(/:param)': 'onTab'
+      ':tab(/:filter)(/:page)': 'onTab'
     },
 
     lazyStart: function(cb) {
@@ -43,8 +43,22 @@
         trigger: true
       });
     },
-    onTab: function() {
+    onTab: function(filter, page) {
+      if (!discoveryView[filter]) return false;
+      page = page ? page : 1;
+      filter = filter ? filter : 'trending';
+
       discoveryView.initContainer();
+      discoveryView.updateNav(filter, page);
+
+      service.getModel('stories', {
+        page: page,
+        filter: filter
+      }).then(function(data) {
+        discoveryView[filter](data);
+      }, function() {
+        discoveryView.error();
+      });
     }
   });
 
