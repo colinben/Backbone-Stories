@@ -46,7 +46,7 @@
     },
     onTab: function(filter, page) {
       if (!discoveryView[filter]) return false;
-      page = page ? page : 1;
+      page = page ? parseInt(page) : 1;
       filter = filter ? filter : 'trending';
 
       discoveryView.initContainer();
@@ -56,6 +56,11 @@
         page: page,
         filter: filter
       }).then(function(data) {
+        var storiesPerPage = 4, // for example
+            totalStories = data.total ? data.total : 10; // for example
+        if (page * storiesPerPage >= totalStories) {
+          discoveryView.updateNav(filter, -1);
+        }
         discoveryView[filter](data);
       }, function() {
         discoveryView.error();

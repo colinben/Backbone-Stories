@@ -8,10 +8,6 @@
 		return (
 			<footer id="footer">
 				<div className="inside-footer cf">
-					<div id="tweetbtn">
-						<a data-width="300" data-show-count="false" className="twitter-follow-button" href="https://twitter.com/coderwall">Follow @coderwall</a>
-						<script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
-					</div>
 					<nav id="footer-nav">
 						<ul className="footer-links cf">
 							<li><a href="/contact_us">Contact</a></li>
@@ -26,16 +22,6 @@
 						</ul>
 						<ul className="copyright">
 							<li>Copyright &copy; 2013 Appdillo Inc. All rights reserved.</li>
-						</ul>
-						<ul className="credits">
-							<li></li>
-						</ul>
-						<ul className="mixpanel">
-							<li>
-								<a href="https://mixpanel.com/f/partner">
-								<img alt="Real Time Web Analytics" src="https://mixpanel.com/site_media/images/partner/badge_light.png" />
-								</a>
-							</li>
 						</ul>
 					</nav>
 				</div>

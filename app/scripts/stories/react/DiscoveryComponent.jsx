@@ -14,6 +14,7 @@
       var self = this;
       $('.dark-screen').on('click', function() {
         $('.dark-screen').parent().hide();
+        self.props.displayLink(self.state.filter);
       })
     },
     componentDidMount: function() {
@@ -28,14 +29,38 @@
     showStories: function(data) {
       document.body.className = '';
       this.setState({content: <Stories data={data} 
-        filter={this.state.filter} 
-        page={this.state.page}
-        showStoryDetail={this.showStoryDetail} />})
+        filter={this.state.filter}
+        showStoryDetail={this.showStoryDetail}
+        getMoreStories={this.getMoreStories} />})
+
+      this.state.content.setPaginate(this.state.page);
+    },
+    getMoreStories: function(e) {
+      var self = this;
+      this.setState({page: this.state.page + 1});
+      this.props.getStories({
+        page: self.state.page + 1,
+        filter: self.state.filter
+      }, function(data) {
+        var storiesPerPage = 4, // for example
+            totalStories = data.total ? data.total : 10; // for example
+        if (self.state.page * storiesPerPage >= totalStories) {
+          self.state.content.error();
+        } else {
+          self.state.content.setPaginate(self.state.page);
+        }
+        self.state.content.addStories(data.data);
+      }, function(err) {
+        self.state.content.error();
+      });
+      return false;
     },
     showStoryDetail: function(e) {
-      var self = this;
-      this.props.getStory($(e.target).parents('article').attr('id'), function(data) {
+      var self = this,
+          id = $(e.target).parents('article').attr('id');
+      this.props.getStory(id, function(data) {
         self.setState({story: <Story popup={true} data={data} />});
+        self.props.displayLink('p-' + id);
         $('.dark-screen').parent().show();
       }, function(err) {
         console.log(err);

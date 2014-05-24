@@ -9,9 +9,16 @@
     initContainer: function() {
       DiscoveryComponent = require('DiscoveryComponent');
       this.content = React.renderComponent(
-          DiscoveryComponent({getStory: this.getStory}),
+          DiscoveryComponent({
+            getStory: this.getStory,
+            getStories: this.getStories,
+            displayLink: this.displayLink
+          }),
           this.$container[0]
       )
+    },
+    displayLink: function(link) {
+      stories.router.navigate('discovery/' + link)
     },
     getStory: function(id, pass, fail) {
       service.getModel('story', {
@@ -24,7 +31,21 @@
         console.log(err);
       });
     },
+    getStories: function(param, pass, fail) {
+      service.getModel('stories', {
+        filter: param.filter,
+        page: param.page
+      }).then(function(data) {
+        pass(data);
+      }, function(err) {
+        fail(err);
+      }).catch(function(err) {
+        console.log(err);
+      });
+    },
     updateNav: function(filter, page) {
+      this.filter = filter;
+      this.page = page;
       this.content.updateNav(filter, page);
     },
     trending: function(data) {
