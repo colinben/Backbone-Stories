@@ -113,7 +113,7 @@
               reject(new Error(textStatus));
             })
       });
-    },
+    }
   });
 
   provide('stories.service', service);

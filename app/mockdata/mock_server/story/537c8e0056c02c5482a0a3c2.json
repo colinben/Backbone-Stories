@@ -1,0 +1,32 @@
+{
+    "_id": "537c8e0056c02c5482a0a3c2",
+    "audit": {
+        "likes": 0,
+        "views": 0,
+        "status": "published",
+        "date_created": "2014-05-17T13:00:00.00Z",
+        "author": {
+            "name": "Tom",
+            "thumbnail": "http://cnd_image.com"
+        }
+    },
+    "content": {
+        "type": "story",
+        "title": "Liverpool to buy Adam Lallana",
+        "subtitle": "Liverpool are in talks with Southampton over the purchase of Adam Lallana, but the two clubs are some way off coming to an agreement, according to reports.",
+        "body_text": "The Express claims the the Reds are prepared to spend £20million on the England international, but his club continue to hold firm on their objective of getting as much money as possible. The 26-year-old has many admirers for the summer, and Manchester United have also been linked heavily with a bid to capture his signature.",
+        "images": [
+            "image.jpg",
+            "image_2.jpg",
+            "image_3.jpg"
+        ]
+    },
+    "tags": [
+        "sports",
+        "Liverpool",
+        "Southampton"
+    ],
+    "reference": {
+        "user_id": "537c8e4856c02c5482a0a3cc"
+    }
+}

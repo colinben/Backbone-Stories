@@ -1,0 +1,31 @@
+{
+    "_id": "537c8e0256c02c5482a0a3c3",
+    "audit": {
+        "likes": 4,
+        "views": 50,
+        "status": "published",
+        "date_created": "2014-05-20T14:00:00.00Z",
+        "author": {
+            "name": "Tom",
+            "thumbnail": "http://cnd_image.com"
+        }
+    },
+    "content": {
+        "type": "story",
+        "title": "Olsen fears for Agger future",
+        "subtitle": "",
+        "body_text": "Denmark coach Morten Olsen believes that Daniel Agger could become 'frustrated and irritated' if he remains on the periphery at Liverpool. The 29-year-old has only started 16 Premier League games this term with injuries playing a part, while Mamadou Sakho and Martin Skrtel have been the preferred pairing. He spoke of his frustration at how his personal campaign had gone in the Danish press recently and hinted at a potential exit.",
+        "images": [
+            "image.jpg",
+            "image_2.jpg"
+        ]
+    },
+    "tags": [
+        "sports",
+        "Liverpool",
+        "Denmark"
+    ],
+    "reference": {
+        "user_id": "537c8e4856c02c5482a0a3cc"
+    }
+}

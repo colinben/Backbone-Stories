@@ -25,7 +25,8 @@
     };
 
     //-------- RPC QUERY STRINGS PASSED TO THE REMOTE SERVICE------------
-    var storyFragment = '/stories&filter={filter}&page={page}';
+    var storiesFragment = '/stories&filter={{filter}}&page={{page}}',
+        storyFragment = '/story&id={{id}}';
 
     var baseURL = 'https://yyzxw.net',
         server = '';
@@ -45,7 +46,8 @@
             server: server
         },
         service: {
-            stories: utils.template('mockdata/mock_server/stories_{{filter}}_{{page}}.json')
+            stories: utils.template('mockdata/mock_server/stories_{{filter}}_{{page}}.json'),
+            story: utils.template('mockdata/mock_server/story/{{id}}.json')
         }
     };
     //---------------------------------------------------
@@ -60,7 +62,8 @@
             server: server
         },
         service: {
-            stories: utils.template(baseURL + storyFragment)
+            stories: utils.template(baseURL + storiesFragment),
+            story: utils.template(baseURL + storyFragment),
         }
     };
     //---------------------------------------------------

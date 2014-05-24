@@ -1,0 +1,27 @@
+{
+    "_id": "537c8e0756c02c5482a0a3c6",
+    "audit": {
+        "likes": 0,
+        "views": 800,
+        "status": "published",
+        "date_created": "2014-05-18T13:00:00.00Z",
+        "author": {
+            "name": "Sarah",
+            "thumbnail": "http://cnd_image_sarah.com"
+        }
+    },
+    "content": {
+        "type": "story",
+        "title": "BMW M2 TESTING AT 'RING",
+        "subtitle": "The 1 M successor we've all been waiting for is on the way",
+        "body_text": "For those still struggling with a '4' in the BMW M range of models, the additional confusion from the M2's introduction now seems another step closer. It's been rumoured for a while and this prototype seen at the 'ring would apparently confirm a fully fledged 2 Series M. Start with this... Start with this...It's hard not to think of the magnificent 1 M Coupe with the upcoming M2. Fortunately it looks like the formula for creating the new model is very similar. Take a 1 Series coupe/2 Series then add more power, a few bits of M3 hardware and some deliciously distended bodywork and, voila, another great M car. Or so we hope. This car appears to be running the M3 brakes, and it's believed that car's steering will also be used in the 2 Series. Power will of course have to be below the M3 but far enough above the M235i; somewhere around 380hp would sit nicely between them. It's worth pointing out the car seen here, despite the flared arches, isn't representative of the M2's final appearance. It's missing four exhausts for a start. This is where the M2 becomes even more interesting because of BMW's recent work based on a 2 Series. As well as the M235i Racing, BMW has also just shown its Vision Gran Turismo car. Most similar to the 2 Series from all BMW models, it look absolutely marvellous. ... and add a bit of this for M2, right? ... and add a bit of this for M2, right?If the M2 can incorporate some of the Vision Gran Turismo's outrageously aggressive aesthetic as well as combining the dynamic adroitness seen in the M235i and M3 then it really could be something special. Furthermore, its arrival can help push the memory of stuff like the 2 Series Active Tourer further to the back of our minds. More as it arrives!",
+        "images": []
+    },
+    "tags": [
+        "Cars",
+        "BMW"
+    ],
+    "reference": {
+        "user_id": "537c8e5656c02c5482a0a3cd"
+    }
+}

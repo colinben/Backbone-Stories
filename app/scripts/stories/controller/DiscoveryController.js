@@ -16,6 +16,7 @@
   var DiscoveryController = BaseController.extend({
 
     actions: {
+      'p-:id': 'onDetail',
       ':tab(/:filter)(/:page)': 'onTab'
     },
 
@@ -56,6 +57,16 @@
         filter: filter
       }).then(function(data) {
         discoveryView[filter](data);
+      }, function() {
+        discoveryView.error();
+      });
+    },
+    onDetail: function(id) {
+      discoveryView.initContainer();
+      service.getModel('story', {
+        id: id
+      }).then(function(data) {
+        discoveryView.showDetail(data);
       }, function() {
         discoveryView.error();
       });

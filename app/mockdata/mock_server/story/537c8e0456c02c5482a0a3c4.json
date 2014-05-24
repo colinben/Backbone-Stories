@@ -1,0 +1,30 @@
+{
+    "_id": "537c8e0456c02c5482a0a3c4",
+    "audit": {
+        "likes": 20,
+        "views": 460,
+        "status": "published",
+        "date_created": "2014-05-19T12:00:00.00Z",
+        "author": {
+            "name": "Tom",
+            "thumbnail": "http://cnd_image.com"
+        }
+    },
+    "content": {
+        "type": "story",
+        "title": "Van Gaal trying to sign Konoplyanca?",
+        "subtitle": "",
+        "body_text": "The Ukrainian winger has been on the radar of the Reds for the majority of the season and manager Brendan Rodgers attempted to lure him to Anfield with an offer on the final day of the January transfer window. It is believed that Rodgers would once again move for his man this summer and remains confident that the Dnipro winger will be part of his squad next season. However, according to the Mirror, new United boss Van Gaal will do battle with their Premier League rivals to secure his signature. The Dutch manager is lining up a host of new transfers to transform the squad and has reportedly given Ed Woodward a shortlist of players to sign during the World Cup. Van Gaal is keen on strengthening the midfield, especially out wide and also across the back four.",
+        "images": [
+            "image.jpg"
+        ]
+    },
+    "tags": [
+        "sports",
+        "Liverpool",
+        "Ukrainian"
+    ],
+    "reference": {
+        "user_id": "537c8e4856c02c5482a0a3cc"
+    }
+}

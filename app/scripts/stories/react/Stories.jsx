@@ -5,7 +5,8 @@
 
   var Stories = React.createClass({
     render: function() {
-    	var stories = '';
+    	var stories = '',
+    		self = this;
     	if (this.props.data) {
     		stories = this.props.data.map(function(item) {
 
@@ -15,7 +16,7 @@
 							<header>
 								<span className="views"> {item.audit.views} </span>
 							</header>
-							<a data-from="mini protip" data-action="view protip" className="title hyphenate track x-mode-popup" href={"#discovery/p-" + item._id}>{item.content.title}</a>
+							<a onClick={self.props.showStoryDetail} className="title hyphenate track x-mode-popup" href={"#discovery/p-" + item._id}>{item.content.title}</a>
 							<footer className="cf">
 								<ul className="author">
 									<li className="user"> by <a title={"Authored by: " + item.audit.author.name} data-from="mini protip" data-action="view protip author" className="track" href={"#user/" + item.reference.user_id}>{item.audit.author.name}</a>
