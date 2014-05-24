@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Chart</title>
+<meta charset="utf-8"/>
+
+<link href="../../../src/styles/EJSChart.css" rel="stylesheet" type="text/css" media="screen"/>
+<script type="text/javascript" src="../../../src/bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="../../../src/scripts/EJSChart.js"></script>
+
+</head>
+<body>
+
+<div style="width:600px; height:400px;" id="myChart2a" class="chart"></div>
+<script type="text/javascript">
+  $.getJSON('candlestick.json', function(json) {
+  var arr = new Array();
+  var data = json.candles;
+  var arr2 = new Array();
+  var flag=0;
+  for(var i=0, l=(data).length; i<l; i++) {
+  var abc = new Array();
+  var newabc = new Array();
+  abc[0] = data[i][0];
+  abc[1] = data[i][5];
+  newabc[0] = data[i][0];
+  if(flag)
+   newabc[1] = data[i][1];
+   else
+  newabc[1] = data[i][2];
+  arr[i] = abc;
+  arr2[i] = newabc;
+  if(!flag)
+  flag=1;
+  else flag=0;
+  }
+  function randomized(arry)
+{
+	var i = arry.length, j, temp;
+	while ( --i )
+	{
+		j = Math.floor( Math.random() * (i - 1) );
+		temp = arry[i];
+		arry[i] = arry[j];
+		arry[j] = temp;
+	}
+	return arry;
+}
+ arr2 = randomized(arr2);
+
+ var myChart2 = new EJSC.Chart( 'myChart2a' , {
+		title: "BTC-e" ,
+        axis_bottom: new EJSC.DateAxis( {
+        caption: 'Time' ,
+        formatter: new EJSC.DateFormatter( {
+        format_string: "MMM DD"} )
+        }) ,
+		axis_right: { caption: "", visible: true  } ,
+		axis_left: { caption: "",grid: { show: false } },
+        show_hints: true ,
+		show_legend:false,
+		legend_title:"BTC-e BTC/USD"}
+    );
+
+  myChart2.addSeries( new EJSC.CandlestickSeries(
+               new EJSC.ArrayDataHandler(
+               json.candles),
+               { title: "BTC/USD",y_axis:"right", gain : {
+                color : '#00FF00'},loss : {
+                color : '#FF0000'}}
+  ));
+  myChart2.addSeries(new EJSC.ScatterSeries( new EJSC.ArrayDataHandler(arr2.slice(0,12)), {
+        pointSize: 5,
+		color:"#6B3A09",
+		y_axis:"right",
+        pointStyle: "circle"
+    } ) );
+    
+myChart2.addSeries( new EJSC.LineSeries(new EJSC.ArrayDataHandler(json.emas_short),{y_axis:"right",color:"6B3A09"}));
+myChart2.addSeries( new EJSC.LineSeries(new EJSC.ArrayDataHandler(json.emas_long),{y_axis:"right",color:"A51EFF"}));
+myChart2.addSeries( new EJSC.BarSeries(new EJSC.ArrayDataHandler(arr),{title:"Volume",color:"98B9D4,CBDCE9"}));
+});
+
+</script>
+</body>

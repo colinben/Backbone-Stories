@@ -1,0 +1,102 @@
+global.tick_interval= "3600",
+global.offset= "0",
+global.ema_short_val= "10",
+global.ema_long_val= "21",
+global.api_key= "e5462e02-d606-4ab5-91b7-74dc373748a9",
+global.main_exchange= "btce",
+global.table_length= "12",
+global.trailing_stoploss= "",
+global.buy_threshold_1= "0",
+global.buy_threshold_2= "0.25",
+global.sell_threshold_1= "0",
+global.sell_threshold_2= "0.25",
+global.mail_to= "some@email.com",
+global.mail_on_order_triggered= true,
+global.mail_on_order_imminent= false,
+global.trading_disabled= true
+
+mtgox.api_key= "mtgoxapikey",
+mtgox.secret= "MtGox API Secret"
+
+bitstamp.api_key= "Bitstamp Client ID",
+bitstamp.secret= "Bitstamp API Secret",
+bitstamp.client_id= "Bitstamp Client ID"
+
+btce.api_key= "BTC-e API Key",
+btce.secret= "BTC-e API Secret"
+ 
+bitstamp_btc.client_id= "",
+bitstamp_btc.api_key= "",
+bitstamp_btc.secret= "",
+bitstamp_btc.currency_reserve= "",
+bitstamp_btc.base_reserve= "",
+bitstamp_btc.override_global_settings= false,
+bitstamp_btc.trade_settings= {
+bitstamp_btc.trade_settings.tick_interval= "3600",
+bitstamp_btc.trade_settings.offset= "0",
+bitstamp_btc.trade_settings.ema_short_val= "10",
+bitstamp_btc.trade_settings.ema_long_val= "21",
+bitstamp_btc.trade_settings.buy_threshold_1= "0",
+bitstamp_btc.trade_settings.buy_threshold_2= "0.25",
+bitstamp_btc.trade_settings.sell_threshold_1= "0",
+bitstamp_btc.trade_settings.sell_threshold_2= "0.25",
+bitstamp_btc.trade_settings.trailing_stoploss= ""
+bitstamp_btc.fund_ratio= "100",
+bitstamp_btc.trading_disabled= false
+
+btce_btc.api_key= "",
+btce_btc.secret= "",
+btce_btc.currency_reserve= "",
+btce_btc.base_reserve= "",
+btce_btc.override_global_settings= false,
+btce_btc.trade_settings= {
+btce_btc.trade_settings.tick_interval= "3600",
+btce_btc.trade_settings.offset= "0",
+btce_btc.trade_settings.ema_short_val= "10",
+btce_btc.trade_settings.ema_long_val= "21",
+btce_btc.trade_settings.buy_threshold_1= "0",
+btce_btc.trade_settings.buy_threshold_2= "0.25",
+btce_btc.trade_settings.sell_threshold_1= "0",
+btce_btc.trade_settings.sell_threshold_2= "0.25",
+btce_btc.trade_settings.trailing_stoploss= ""
+btce_btc.fund_ratio= "100",
+btce_btc.trading_disabled= false
+
+btce_ltc.currency_reserve= "",
+btce_ltc.base_reserve= "",
+btce_ltc.fund_ratio= "0",
+btce_ltc.currency= "USD",
+btce_ltc.override_global_settings= false,
+btce_ltc.trade_settings= {
+btce_ltc.trade_settings.tick_interval= "3600",
+btce_ltc.trade_settings.offset= "0",
+btce_ltc.trade_settings.ema_short_val= "10",
+btce_ltc.trade_settings.ema_long_val= "21",
+btce_ltc.trade_settings.trailing_stoploss= "",
+btce_ltc.trade_settings.buy_threshold_1= "0",
+btce_ltc.trade_settings.buy_threshold_2= "0.25",
+btce_ltc.trade_settings.sell_threshold_1= "0",
+btce_ltc.trade_settings.sell_threshold_2= "0.25"
+btce_ltc.trading_disabled= false
+
+mtgox_btc.api_key= "",
+mtgox_btc.secret= "",
+mtgox_btc.currency_reserve= "1111",
+mtgox_btc.base_reserve= "2222",
+mtgox_btc.currency= "USD",
+mtgox_btc.override_global_settings= true,
+mtgox_btc.trade_settings= {
+mtgox_btc.trade_settings.tick_interval= "3600",
+ mtgox_btc.trade_settings.offset= "1",
+mtgox_btc.trade_settings.ema_short_val= "10",
+mtgox_btc.trade_settings.ema_long_val= "21",
+mtgox_btc.trade_settings.buy_threshold_1= "0.11",
+mtgox_btc.trade_settings.buy_threshold_2= "0.22",
+mtgox_btc.trade_settings.sell_threshold_1= "0.33",
+mtgox_btc.trade_settings.sell_threshold_2= "0.44",
+mtgox_btc.trade_settings.trailing_stoploss= "333"
+mtgox_btc.fund_ratio= "100",
+mtgox_btc.trading_disabled= true
+version=1.1,
+
+}
