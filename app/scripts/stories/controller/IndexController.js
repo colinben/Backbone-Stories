@@ -29,7 +29,7 @@
     },
 
     initialize: function() {
-      var $container = $('.container');
+      var $container = $('#container');
 
       $container.empty();
 

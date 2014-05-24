@@ -9,7 +9,7 @@
       Backbone = require('Backbone'),
       service = require('stories.service'),
       BaseController = require('BaseController'),
-      DiscoveryView = require('DiscoveryView');
+      DiscoveryView = require('stories.view.DiscoveryView');
 
   var discoveryView;
 
@@ -28,7 +28,7 @@
     },
 
     initialize: function() {
-      var $container = $('.container');
+      var $container = $('#container');
 
       $container.empty();
 
@@ -44,7 +44,7 @@
       });
     },
     onTab: function() {
-
+      discoveryView.initContainer();
     }
   });
 

@@ -13,21 +13,17 @@
 
     render: function() {
       return (
-          <div id="index">
-            <div id="top-loader">
-              <div id="top-loader-inner">
-                <div className="top-loader-total"></div>
-                <div className="top-loader-current"></div>
-              </div>
-            </div>
-            <div className="header">
-            </div>
-            <div className="index">
+          <div id="discovery">
+            <Header />
+            <div id="main-content">
+              <div id="upvoted-protips"></div>
+              <section id="x-protips-grid" className="new-main-content cf">
+                <DiscoveryNav />
+                <Stories />
+              </section>
               {this.state.content}
             </div>
-            <div className="footer">
-              <Footer />
-            </div>
+            <Footer />
           </div>
        );
     }

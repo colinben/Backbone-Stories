@@ -14,7 +14,7 @@
 
     index: function(params) {
       var notFoundView = new NotFoundView({
-        $container: $('.container')
+        $container: $('#container')
       });
       notFoundView.showIndex();
     }

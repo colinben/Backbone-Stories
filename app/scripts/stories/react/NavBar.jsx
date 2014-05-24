@@ -1,30 +1,21 @@
 /** @jsx React.DOM */
 (function(provide, require) {
   var React = require('React');
-  var appModel = {};
+
   var NavBar = React.createClass({
     render: function() {
       return (
-          <nav className="navbar navbar-default" role="navigation">
-              <div className="navbar-header">
-                <a className="navbar-brand" href="#"><img height={90} src="images/logo.png" /></a>
-                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-top">
-                  <span className="sr-only">Toggle navigation</span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                </button>
-              </div>
-              <div id="navbar-top" className="collapse navbar-collapse">
-                <ul className="nav navbar-nav">
-                  <li><a href="#dashboard">Dashboard</a></li>
-                  <li><a href="#backtesting">Backtesting</a></li>
-                  <li><ConnectionStatus /></li>
-                </ul>
-              </div>
-              <div className="col-md-5">
-
-              </div>
+          <nav id="nav">
+            <ul>
+              <li><a href="/">Discover</a></li>
+              <li></li>
+              <li><a href="/dashboard">Feed</a></li>
+              <li><a href="/datpv">Profile</a></li>
+              <li><a href="/teams">Teams</a></li>
+              <li><a href="/jobs">Jobs</a></li>
+              <li><a href="/settings">Settings</a></li>
+              <li><a href="/goodbye">Sign out</a></li>
+            </ul>
           </nav>
           )
     }
