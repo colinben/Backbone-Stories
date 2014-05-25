@@ -28,6 +28,7 @@
     },
     showStories: function(data) {
       document.body.className = '';
+      this.setState({content: ''});
       this.setState({content: <Stories data={data} 
         filter={this.state.filter}
         showStoryDetail={this.showStoryDetail}

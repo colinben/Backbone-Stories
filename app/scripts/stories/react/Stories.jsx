@@ -22,7 +22,7 @@
 						<a onClick={self.props.showStoryDetail} className="title hyphenate track x-mode-popup" href={"#discovery/p-" + item._id}>{item.content.title}</a>
 						<footer className="cf">
 							<ul className="author">
-								<li className="user"> by <a title={"Authored by: " + item.audit.author.name} data-from="mini protip" data-action="view protip author" className="track" href={"#user/" + item.reference.user_id}>{item.audit.author.name}</a>
+								<li className="user"> by <a title={"Authored by: " + item.audit.author.name} className="track" href={"#user/" + item.reference.user_id}>{item.audit.author.name}</a>
 								</li>
 							</ul>
 							<ul className="avatars">
@@ -44,7 +44,7 @@
   		if (page > 0) {
   			paginate = 	<div className="four-cols-more">
 							<div id="more">
-								<a onClick={this.props.getMoreStories} rel="next" data-remote="true" data-method="get" data-from="index" data-action="more protips" className="final-more track" href={'#discovery/' + this.props.filter + '/' + (page + 1)}>More</a>
+								<a onClick={this.props.getMoreStories} className="final-more track" href={'#discovery/' + this.props.filter + '/' + (page + 1)}>More</a>
 							</div>
 						</div>;
   		}

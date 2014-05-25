@@ -41,8 +41,8 @@
 			                </div>
 			            </aside>
 			            <article id={data._id} className="tip-panel">
-			                <a target="new" data-from="protip" data-action="share protip" className="share-this-tip direction track" href="http://twitter.com/share?url=https%3A%2F%2Fcoderwall.com%2Fp%2Fmiqu3g&amp;via=coderwall&amp;text=Easily+Extend+Javascript+Prototypes+%23protip&amp;related=&amp;count=vertical&amp;lang=en">Share this</a>
-			                <a rel="nofollow" data-remote="true" data-method="post" data-from="protip" data-action="upvote protip" className="upvote track" href="/p/miqu3g/upvote">{data.audit.likes}</a>
+			                <a target="new" data-from="protip" data-action="share protip" className="share-this-tip direction track" href="#">Share this</a>
+			                <a rel="nofollow" className="upvote track" href="#">{data.audit.likes}</a>
 			                <header className="tip-header">
 			                    <h1 className="tip-title">
 			                        {data.content.title}
