@@ -1,0 +1,29 @@
+{
+    "_id": "537c8e3e56c02c5482a0a3cb",
+    "audit": {
+        "likes": 45,
+        "views": 700,
+        "status": "published",
+        "date_created": "2014-05-10T13:00:00.00Z",
+        "author": {
+            "name": "Derek",
+            "thumbnail": "http://cnd_image_derek.com"
+        }
+    },
+    "content": {
+        "type": "story",
+        "title": "5 streaming music services you might have overlooked",
+        "subtitle": "",
+        "body_text": "The streaming music scene seems like it’s ruled by a few heavyweights, with Pandora, Spotify, and Rdio slugging it out for your hearts, minds, and eardrums. But that’s only part of the picture. Just as several lower-profile video streaming services vie with the likes of Netflix and Hulu, music streaming services you’ve probably never heard of are looking for ways to make their mark with features the established players don’t offer. Which subscription music service will emerge as the next Spotify or Pandora? We’ve spotted five interesting alternatives that bring their own unique twist to music stream. The streaming music scene seems like it’s ruled by a few heavyweights, with Pandora, Spotify, and Rdio slugging it out for your hearts, minds, and eardrums. But that’s only part of the picture. Just as several lower-profile video streaming services vie with the likes of Netflix and Hulu, music streaming services you’ve probably never heard of are looking for ways to make their mark with features the established players don’t offer. Which subscription music service will emerge as the next Spotify or Pandora? We’ve spotted five interesting alternatives that bring their own unique twist to music stream. The streaming music scene seems like it’s ruled by a few heavyweights, with Pandora, Spotify, and Rdio slugging it out for your hearts, minds, and eardrums. But that’s only part of the picture. Just as several lower-profile video streaming services vie with the likes of Netflix and Hulu, music streaming services you’ve probably never heard of are looking for ways to make their mark with features the established players don’t offer. Which subscription music service will emerge as the next Spotify or Pandora? We’ve spotted five interesting alternatives that bring their own unique twist to music stream.",
+        "images": [
+            "image.jpg"
+        ]
+    },
+    "tags": [
+        "Music",
+        "Streaming"
+    ],
+    "reference": {
+        "user_id": "537c8e7956c02c5482a0a3ce"
+    }
+}

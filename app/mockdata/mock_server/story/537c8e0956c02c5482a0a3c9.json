@@ -1,0 +1,32 @@
+{
+    "_id": "537c8e0956c02c5482a0a3c9",
+    "audit": {
+        "likes": 0,
+        "views": 2,
+        "status": "published",
+        "date_created": "2014-05-21T11:18:00.00Z",
+        "author": {
+            "name": "Derek",
+            "thumbnail": "http://cnd_image_derek.com"
+        }
+    },
+    "content": {
+        "type": "story",
+        "title": "Netflix expansion: Service to land in six more European countries this year",
+        "subtitle": "",
+        "body_text": "Netflix is gearing up to bring on board what it hopes will be millions of new subscribers after announcing plans to launch its service in six more European countries. The online video behemoth said Tuesday it intends to start offering its content to TV and movie fans in Germany, Austria, Switzerland, France, Belgium and Luxembourg by the end of this year. The coming expansion follows the recent arrival of Netflix in other European countries, namely the UK, Ireland, Denmark, Finland, Norway, Sweden and the Netherlands. “Upon launch, broadband users in these countries can subscribe to Netflix and instantly watch a curated selection of Hollywood, local and global TV series and movies, including critically-acclaimed Netflix original series, whenever and wherever they like on TVs, tablets, phones, game consoles and computers,” the company said in a release. Incumbent rivals such as France’s FilmoTV have already been readying themselves for Netflix’s arrival, a development that will inevitably shake up the VOD sector across the continent. FilmoTV president Bruno Delecour told Variety in March that while his service wouldn’t be able to compete with Netflix in terms of the number of titles it offers, “we can stand out thanks to the quality of our content,” a factor that he believes “makes FilmoTV different from superstores like Netflix.” In Germany, meanwhile, satellite operator Sky Deutschland has recently launched a Netflix-style service called Snap. Germany and France are two of the world’s top ten broadband markets, so Netflix’s expansion could prove lucrative if it succeeds in making an impact in the two nations. With 134 million broadband subscribers, Western Europe as a whole is hugely important to Netflix. By way of comparison, there are currently around 88 million broadband subscribers in the US. Since launching its streaming service in 2007, the California-based company has built a user base of 48 million subscribers across more than 40 countries.",
+        "images": [
+            "image.jpg",
+            "image_2.jpg",
+            "image_3.jpg",
+            "image_4.jpg"
+        ]
+    },
+    "tags": [
+        "Netflix",
+        "Europe"
+    ],
+    "reference": {
+        "user_id": "537c8e7956c02c5482a0a3ce"
+    }
+}
