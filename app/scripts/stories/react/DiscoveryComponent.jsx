@@ -63,6 +63,11 @@
         self.setState({story: <Story popup={true} model={model} />});
         self.props.displayLink('p-' + id);
         $('.dark-screen').parent().show();
+        setTimeout(function() {
+          $('html, body').animate({
+            scrollTop: $('#x-active-preview-pane').offset().top - 25
+          });
+        }, 200);
       }, function(err) {
         console.log(err);
       });

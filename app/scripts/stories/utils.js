@@ -61,67 +61,6 @@
       return obj;
     },
     /**
-     *
-     *
-     * @param
-     * @return
-     */
-    spinnerButtons: function(buttons, options) {
-      var defaults = {
-            style: 'expand-left'
-          },
-          self = this;
-      options = $.extend({}, options, defaults);
-      $.each(buttons, function() {
-        self.spinnerButton( $(this), options );
-      });
-    },
-    spinnerButton: function(button, options) {
-      if (button.data('converted') || button.parents('#backtesting').length > 0) return;
-      button.data('converted', 1);
-
-      var btn = button;
-      if (button[0].nodeName == 'INPUT') {
-        button.hide();
-        btn = $('<a class="btn ' + button.context.className + '" data-style="'+options.style+'">' +
-                   button.context.defaultValue + '</a>');
-        button.after(btn);
-      }
-      btn.addClass('ladda-button');
-      var spiner = Ladda.create( btn[0] );
-
-      this.on('spinner_done', function() {
-        setTimeout(function() {
-          spiner.stop();
-        }, 150);
-      });
-
-      btn.on('click', function(e) {
-        spiner.start();
-        button.click();
-        return false;
-      });
-
-    },
-    /**
-     *
-     *
-     * @param
-     * @return
-     */
-    secondsToTime: function(seconds) {
-      var minutes = parseInt(seconds/60),
-          hours = parseInt(minutes/60),
-          days = parseInt(hours/24);
-
-      return {
-        days: days,
-        hours: hours,
-        minutes: minutes,
-        seconds: seconds
-      }
-    },
-    /**
      * Creates a compile template function to construct parsed string from string template and params object.
      *
      * var compileTemplate = template(strTemplate);

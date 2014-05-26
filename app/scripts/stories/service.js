@@ -6,15 +6,7 @@
       RSVP = require('RSVP'),
       settings = require('stories.settings'),
       ls = require('stories.localStorage'),
-      $ = require('jQuery'),
-      BotOptionModel = require('stories.model.BotOption'),
-      MarketOptionModel = require('stories.model.MarketOption'),
-      NotificationOptionModel = require('stories.model.NotificationOption'),
-      SignupStep = require('stories.model.SignupStep'),
-      Markets = require('stories.model.Markets'),
-      OptionsModel = require('stories.model.Options'),
-      MarketOptionCollection = require('stories.collection.MarketOptions'),
-      Services = require('stories.model.Services');
+      $ = require('jQuery');
 
   var frequencyUpdateTimeout = [],
       frequencyUpdateIndex = 0;
