@@ -8,6 +8,8 @@
       _ = require('_'),
       Backbone = require('Backbone'),
       service = require('stories.service'),
+      StoriesCollection = require('stories.collection.Stories'),
+      StoryModel = require('stories.model.Story'),
       BaseController = require('BaseController'),
       DiscoveryView = require('stories.view.DiscoveryView');
 
@@ -37,6 +39,8 @@
         $container: $container
       });
 
+      this.stories = new StoriesCollection;
+
     },
     index: function() {
       this.router.dispatch('discovery', {
@@ -49,32 +53,45 @@
       page = page ? parseInt(page) : 1;
       filter = filter ? filter : 'trending';
 
-      discoveryView.initContainer();
+      discoveryView.initContainer(this.stories, null);
       discoveryView.updateNav(filter, page);
+
+      var self = this;
 
       service.getModel('stories', {
         page: page,
         filter: filter
-      }).then(function(data) {
+      }).then(function(response) {
         var storiesPerPage = 4, // for example
-            totalStories = data.total ? data.total : 10; // for example
+            totalStories = response.total ? response.total : 10; // for example
         if (page * storiesPerPage >= totalStories) {
           discoveryView.updateNav(filter, -1);
         }
-        discoveryView[filter](data);
+        self.stories.set(response.data);
+
+        discoveryView[filter]();
       }, function() {
         discoveryView.error();
       });
     },
     onDetail: function(id) {
-      discoveryView.initContainer();
+      var story = this.stories.findWhere({_id: id});
+      if (story) {
+        discoveryView.initContainer(null, story);
+        discoveryView.showDetail(story);
+        return true;
+      }
+      var model = new StoryModel;
+      discoveryView.initContainer(null, model);
       service.getModel('story', {
         id: id
-      }).then(function(data) {
-        discoveryView.showDetail(data);
+      }).then(function(response) {
+        model.set(response);//new StoryModel(response, {parse: true})
+        discoveryView.showDetail();
       }, function() {
         discoveryView.error();
       });
+
     }
   });
 

@@ -6,13 +6,13 @@
   var Story = React.createClass({
     render: function() {
     	var overlay = '',
-    		data = this.props.data,
+    		model = this.props.model,
     		tags = '';
 	  	if (this.props.popup) {
 	  		overlay = <div className="dark-screen"></div>;
 	  	}
-	  	if (data.tags) {
-	  		tags = data.tags.map(function(item) {
+	  	if (model.get('tags')) {
+	  		tags = model.get('tags').map(function(item) {
 	  			return (
 	  				<li>
                         <a href={"#tags/" + item}>{item}</a>
@@ -27,29 +27,29 @@
 			        <div id="x-protip" className="cf fullpage protip-single tip-container x-protip-content">
 			            <aside className="tip-sidebar">
 			                <div className="user-box">
-			                    <a href={'#user/' + data.reference.user_id} className="avatar">
-			                    	<img src={data.audit.author.thumbnail} />
+			                    <a href={'#user/' + model.get('reference.user_id')} className="avatar">
+			                    	<img src={model.get('audit.author.thumbnail')} />
 			                    </a>
 			                    <ul className="user-team">
 			                        <li className="user">
 			                            by &nbsp;
-			                            <a href={'#user/' + data.reference.user_id} className="track">
-			                            	{data.audit.author.name}
+			                            <a href={'#user/' + model.get('reference.user_id')} className="track">
+			                            	{model.get('audit.author.name')}
 			                            </a>
 			                        </li>
 			                    </ul>
 			                </div>
 			            </aside>
-			            <article id={data._id} className="tip-panel">
+			            <article id={model.get('_id')} className="tip-panel">
 			                <a target="new" data-from="protip" data-action="share protip" className="share-this-tip direction track" href="#">Share this</a>
-			                <a rel="nofollow" className="upvote track" href="#">{data.audit.likes}</a>
+			                <a rel="nofollow" className="upvote track" href="#">{model.get('audit.likes')}</a>
 			                <header className="tip-header">
 			                    <h1 className="tip-title">
-			                        {data.content.title}
+			                        {model.get('content.title')}
 			                    </h1>
 			                    <p className="views">
 			                        <span>
-			                        {data.audit.views}
+			                        {model.get('audit.views')}
 			                        </span>
 			                        &nbsp;
 			                        views
@@ -59,7 +59,7 @@
 			                    </ul>
 			                </header>
 			                <div className="tip-content">
-			                    <p>{data.content.body_text}</p>
+			                    <p>{model.get('content.body_text')}</p>
 			                </div>
 			            </article>
 			        </div>

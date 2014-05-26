@@ -113,6 +113,18 @@
               reject(new Error(textStatus));
             })
       });
+    },
+
+    /**
+     * Gets model url
+     *
+     * @param params
+     * @returns {RSVP.Promise}
+     */
+    getModelUrl: function(model, params) {
+      params = params || {};
+      model = model || 'stories';
+      return settings.get('service.' + model)(params);
     }
   });
 

@@ -26,12 +26,12 @@
     updateNav: function(filter, page) {
       this.setState({filter: filter, page: page});
     },
-    showStories: function(data) {
+    showStories: function() {
       document.body.className = '';
       this.setState({content: ''});
-      this.setState({content: <Stories data={data} 
+      this.setState({content: <Stories collection={this.props.collection} 
         filter={this.state.filter}
-        showStoryDetail={this.showStoryDetail}
+        popupStory={this.popupStory}
         getMoreStories={this.getMoreStories} />})
 
       this.state.content.setPaginate(this.state.page);
@@ -56,11 +56,11 @@
       });
       return false;
     },
-    showStoryDetail: function(e) {
+    popupStory: function(e) {
       var self = this,
           id = $(e.target).parents('article').attr('id');
-      this.props.getStory(id, function(data) {
-        self.setState({story: <Story popup={true} data={data} />});
+      this.props.getStory(id, function(model) {
+        self.setState({story: <Story popup={true} model={model} />});
         self.props.displayLink('p-' + id);
         $('.dark-screen').parent().show();
       }, function(err) {
@@ -68,10 +68,9 @@
       });
       return false;
     },
-    showStory: function(data) {
+    showStory: function() {
       document.body.className = 'protip-single';
-      this.setState({content: <Story data={data} />});
-      return false;
+      this.setState({content: <Story model={this.props.model} />});
     },
     showError: function() {
       this.setState({content: <div className="inside cf"><div className="alert alert-danger">Data not found</div></div>})

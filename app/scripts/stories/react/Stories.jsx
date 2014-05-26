@@ -19,7 +19,7 @@
 						<header>
 							<span className="views"> {item.audit.views} </span>
 						</header>
-						<a onClick={self.props.showStoryDetail} className="title hyphenate track x-mode-popup" href={"#discovery/p-" + item._id}>{item.content.title}</a>
+						<a onClick={self.props.popupStory} className="title hyphenate track x-mode-popup" href={"#discovery/p-" + item._id}>{item.content.title}</a>
 						<footer className="cf">
 							<ul className="author">
 								<li className="user"> by <a title={"Authored by: " + item.audit.author.name} className="track" href={"#user/" + item.reference.user_id}>{item.audit.author.name}</a>
@@ -51,8 +51,8 @@
   		this.setState({paginate: paginate});
   	},
   	componentWillMount: function() {
-    	if (this.props.data) {
-    		this.addStories(this.props.data);
+    	if (this.props.collection) {
+    		this.addStories(this.props.collection.toJSON());
     	}
   	},
 

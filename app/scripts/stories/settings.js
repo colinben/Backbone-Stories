@@ -28,8 +28,7 @@
     var storiesFragment = '/stories&filter={{filter}}&page={{page}}',
         storyFragment = '/story&id={{id}}';
 
-    var baseURL = 'https://yyzxw.net',
-        server = '';
+    var baseURL = 'https://yyzxw.net';
 
     //====== service templates ========================
 
@@ -42,9 +41,7 @@
         log: {
             level: $.log.LEVEL.TRACE
         },
-        socket: {
-            server: server
-        },
+
         service: {
             stories: utils.template('mockdata/mock_server/stories_{{filter}}_{{page}}.json'),
             story: utils.template('mockdata/mock_server/story/{{id}}.json')
@@ -58,9 +55,6 @@
         log: {
             level: $.log.LEVEL.TRACE
         },
-        socket: {
-            server: server
-        },
         service: {
             stories: utils.template(baseURL + storiesFragment),
             story: utils.template(baseURL + storyFragment),
@@ -71,9 +65,6 @@
     var prod = _.extend(common, {
         log: {
             level: $.log.LEVEL.INFO
-        },
-        socket: {
-            server: server
         },
         service: {
             stories: utils.template(baseURL + storyFragment)
